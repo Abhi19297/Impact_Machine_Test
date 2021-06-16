@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Date Streak</string>
+    <string name="heading">Streak Count</string>
+    <string name="next_date">Next Date</string>
+    <string name="skip_date">Skip Date</string>
+    <string name="reset_date">Reset</string>
+    <string name="streak">Streak :-</string>
+    <string name="ResetText">\"Are you sure, You want to Reset \"</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

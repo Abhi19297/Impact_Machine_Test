@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+        <variable
+            name="viewModel"
+            type="com.threedev.datestreak.data.AppViewModel" />
+    </data>
+
+    <!-- Provided Linear layout for the activity components -->
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/tenDp"
+        android:background="@color/grey"
+        android:orientation="vertical">
+
+
+
+
+        <!-- TextView for the date of the activity -->
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tenDp"
+            android:layout_marginEnd="@dimen/tenDp"
+            android:layout_marginBottom="@dimen/tenDp"
+            android:padding="@dimen/tenDp"
+            android:textSize="@dimen/largeFontSize"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@={viewModel.date}" />
+
+        <!-- TextView for the streak of the activity -->
+
+        <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tenDp"
+            android:textSize="@dimen/midSizeFont"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@string/streak" />
+
+            <TextView
+            android:id="@+id/txt_streak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/tenDp"
+            android:textSize="@dimen/midSizeFont"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:text="@={viewModel.streak}" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/twentyDp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Button for the Next Date of the activity -->
+            <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twentyDp"
+            android:layout_marginEnd="@dimen/twentyDp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{()-> viewModel.onButtonNextDateClicked()}"
+            android:text="@string/next_date"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/midSizeFont"
+            android:textStyle="bold"
+                 />
+
+            <!-- Button for the Skip Date of the activity -->
+
+            <Button
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/twentyDp"
+            android:layout_marginEnd="@dimen/twentyDp"
+            android:background="@color/colorPrimary"
+            android:onClick="@{()-> viewModel.onButtonSkipDateClicked()}"
+            android:text="@string/skip_date"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/midSizeFont"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+        <!-- Button for the Reset Date of the activity -->
+
+        <Button
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/twentyDp"
+            android:paddingStart="@dimen/fiftyDp"
+            android:paddingEnd="@dimen/fiftyDp"
+            android:background="@color/red"
+            android:onClick="@{()-> viewModel.onButtonResetDateClicked()}"
+            android:text="@string/reset_date"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/midSizeFont"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+</layout>
